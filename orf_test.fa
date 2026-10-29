@@ -1,2 +1,4 @@
->first_reading_frame
+>only_first_reading_frame_
 AGCATGACCATGTAAGTAGCTATGGATTGATAGTGATAA
+>all_reading_frames_have_seq
+ATGCCATGGCATTAGCCATGGCATAAACATGGCTGA
