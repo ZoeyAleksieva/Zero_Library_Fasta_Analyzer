@@ -1,0 +1,84 @@
+only_first_reading_frame_
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+all_reading_frames_have_seq
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+
+only_first_reading_frame_
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+all_reading_frames_have_seq
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+
+only_first_reading_frame_
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+all_reading_frames_have_seq
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+
+sample1
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+sample2
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+
+sample1
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+sample2
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+
+sample1
+GC content: 35.90
+Reverse complement: TTATCACTATCAATCCATAGCTACTTACATGGTCATGCT
+Longest orf seq: ATGTAAGTAGCTATGGATTGA
+
+--------------------------------------------------
+
+sample2
+GC content: 47.22
+Reverse complement: TCAGCCATGTTTATGCCATGGCTAATGCCATGGCAT
+Longest orf seq: ATGGCATTAGCCATGGCATAA
+
+--------------------------------------------------
+

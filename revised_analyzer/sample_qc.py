@@ -8,14 +8,25 @@ class Sample:
         self.sample_seq = sequence
 
     def get_gc_content(self):
-        gc_count = self.sample_seq.count("G") + self.sample_seq.count("C")
-        gc_content = f"{(gc_count / len(self.sample_seq)) * 100:.2f}"
-        return gc_content
+        #try/except to handle divided by zero error if the sequence is empty
+       try:
+           gc_count = self.sample_seq.count("G") + self.sample_seq.count("C")
+           total = len(self.sample_seq)
+           gc_content = (gc_count / total) * 100.0
+       except ZeroDivisionError:
+           print(f"Error: Sequence for sample '{self.sample_id}' is empty. Cannot calculate GC content.")
+           return 0.0
+       return gc_content 
 
     def get_reverse_complement(self):
-        complement_map = {"A": "T", "T": "A", "G": "C", "C": "G"}
-        complemented = "".join(complement_map[base] for base in self.sample_seq)
-        return complemented[::-1]
+        #use try/except to handle invalid input for the sequence
+        try:
+            complement_map = {"A": "T", "T": "A", "G": "C", "C": "G", "N": "N"}
+            complemented = "".join(complement_map[base] for base in self.sample_seq)
+            return complemented[::-1]
+        except KeyError as e:
+            print(f"Error: Invalid base '{e.args[0]}' found in sequence for sample '{self.sample_id}'. Cannot compute reverse complement.") 
+            return "Error: Invalid sequence"
 
     def get_longest_ORF_seq(self):
         #TODO: Handle equal length?
@@ -31,6 +42,8 @@ class Sample:
 
     def __get_longest_seq(self, sequence):
         start_indices = [i for i in range(len(sequence)) if sequence.startswith("ATG", i)]
+        if not start_indices:
+            return ""
         longest_seq = ""
         for start_index in start_indices:
             curr_seq = sequence[start_index:]

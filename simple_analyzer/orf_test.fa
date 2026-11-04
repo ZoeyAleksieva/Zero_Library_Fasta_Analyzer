@@ -1,4 +1,4 @@
->only_first_reading_frame_
+>sample1
 AGCATGACCATGTAAGTAGCTATGGATTGATAGTGATAA
->all_reading_frames_have_seq
+>sample2
 ATGCCATGGCATTAGCCATGGCATAAACATGGCTGA
