@@ -3,11 +3,10 @@ from typing import Final
 
 STOP_CODONS: Final = ("TAA", "TAG", "TGA")
 
-def analyze_fasta():
-    
+def analyze_fasta(file):
     sequence_info = defaultdict(list)
 
-    with open("orf_test.fa", "r") as fasta_file:
+    with open(file, "r") as fasta_file:
         
         for line in fasta_file:
             line = line.strip()
@@ -52,17 +51,16 @@ def get_longest_ORF(sequence):
     #call function for each ORF and then compare returned
     longest_ORF_seq = ""
     for i in range(3):
-        print(f"Current ORF: {i}")
         codons = get_codons_for_ORF(i, sequence)
         curr_ORF_longest_seq = get_longest_seq(codons)
-        print(f"Longest seq of curr ORF: {curr_ORF_longest_seq}")
         if len(curr_ORF_longest_seq) > len(longest_ORF_seq):
             longest_ORF_seq = curr_ORF_longest_seq
     return longest_ORF_seq
 
 def get_codons_for_ORF(start_index, sequence):
     codons = []
-    for i in range(start_index, len(sequence) - 2, 3): #if len is 12, i is 0,3,6,9
+    #The "-2" ensures that only sets of 3 bases(aka codons) are appended
+    for i in range(start_index, len(sequence) - 2, 3):
         codons.append(sequence[i:i+3])
     return codons
 
@@ -74,11 +72,8 @@ def get_longest_seq(codons):
         curr_codons = codons[index:]
         for i, codon in enumerate(curr_codons):
             if codon in STOP_CODONS:
-                print(f"found match: {codon}")
                 if i - index > max_index_diff:
-                    print(f"found new max: {index} to {i + index}")
                     max_index_diff = i - index
-                    print(f"curr max: {codons[index : i + index + 1]}")
                     curr_longest = codons[index : i + index + 1]
                 break
     longest_seq = "".join(curr_longest)
@@ -91,4 +86,3 @@ def get_ATG_indices(codons):
             atg_indices.append(i)
     return atg_indices
 
-analyze_fasta()
