@@ -52,7 +52,7 @@ for header, sequence in read_fasta_records(fasta_file):
    #print(f"Reverse complement: {curr.get_reverse_complement()}")
    #print(f"Longest orf seq: {curr.get_longest_ORF_seq()}")
    # Write the results to a file
-   with open("_results.txt", "a") as results_file:
+   with open("results.txt", "a") as results_file:
        results_file.write(f"{header}\n")
        results_file.write(f"GC content: {curr.get_gc_content():.2f}\n")
        results_file.write(f"Reverse complement: {curr.get_reverse_complement()}\n")
