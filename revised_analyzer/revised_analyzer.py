@@ -21,7 +21,7 @@ def read_fasta_records(filename):
 
 # MAIN
 if len(sys.argv) < 3:
-    print("Usage: python main.py <fasta_file> qc_threshold")
+    print("Usage: python revised_analyzer.py <fasta_file> qc_threshold")
     sys.exit(1)
 
 #use try/catch to handle invalid input for the fasta file
@@ -48,15 +48,19 @@ for header, sequence in read_fasta_records(fasta_file):
    print(f"Sample ID: {header}, Sequence length: {len(sequence)} bases")
    curr = sample_qc.Sample(header=header, sequence=sequence)
    samples.append(curr)
-   print(f"GC content: {curr.get_gc_content():.2f}")
-   print(f"Reverse complement: {curr.get_reverse_complement()}")
-   print(f"Longest orf seq: {curr.get_longest_ORF_seq()}")
+   #print(f"GC content: {curr.get_gc_content():.2f}")
+   #print(f"Reverse complement: {curr.get_reverse_complement()}")
+   #print(f"Longest orf seq: {curr.get_longest_ORF_seq()}")
    # Write the results to a file
-   with open("results.txt", "a") as results_file:
+   with open("_results.txt", "a") as results_file:
        results_file.write(f"{header}\n")
        results_file.write(f"GC content: {curr.get_gc_content():.2f}\n")
        results_file.write(f"Reverse complement: {curr.get_reverse_complement()}\n")
-       results_file.write(f"Longest orf seq: {curr.get_longest_ORF_seq()}\n\n")
+       seq = curr.get_longest_ORF_seq()
+       #formatted = " ".join(seq[i:i+3] for i in range(0, len(seq), 3))
+       results_file.write(f"Longest orf seq: {seq}\n")
+       #results_file.write(f"Longest orf seq: {formatted}\n\n")
+       #results_file.write(f"Longest orf seq: {" ".join(sequence[i:i+3] for i in range(0, len(sequence), 3))}\n\n")
        results_file.write("--------------------------------------------------\n\n")
 
 #Use list comprehensions to filter the cohort down to samples passing a GC-content QC threshold
